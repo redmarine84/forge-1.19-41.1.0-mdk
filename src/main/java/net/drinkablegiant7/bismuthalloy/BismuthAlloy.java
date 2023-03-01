@@ -1,6 +1,7 @@
 package net.drinkablegiant7.bismuthalloy;
 
 import com.mojang.logging.LogUtils;
+import net.drinkablegiant7.bismuthalloy.item.ModItems;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -18,6 +19,8 @@ public class BismuthAlloy {
     public BismuthAlloy()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        ModItems.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
